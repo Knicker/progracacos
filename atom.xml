@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-06-29T21:15:16+02:00</updated>
+  <updated>2014-06-29T21:18:31+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Knicker]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
