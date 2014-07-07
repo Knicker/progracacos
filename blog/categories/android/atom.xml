@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Progracacos]]></title>
-  <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Android | Progracacos]]></title>
+  <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
   <updated>2014-07-07T21:08:01+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
