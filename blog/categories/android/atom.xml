@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-09T02:07:12+02:00</updated>
+  <updated>2014-10-09T02:21:43+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -18,11 +18,17 @@
     <link href="http://Knicker.github.io/progracacos/blog/2014/07/07/historia-de-android/"/>
     <updated>2014-07-07T20:03:41+02:00</updated>
     <id>http://Knicker.github.io/progracacos/blog/2014/07/07/historia-de-android</id>
-    <content type="html"><![CDATA[<p>La transición entre Activities la realizaremos con <strong>overridePendingTransition</strong> que lo que hará es sobreescribir las animaciones por defectos por la que le pasemos por parámetro.<!-- more --> Tendremos que llamar al método siempre que vaya a suceder una transición, como por ejemplo, al abrir o cerrar una <code>Activity</code> e indicar las animaciones de entrada y salida.</p>
+    <content type="html"><![CDATA[<p>La transición entre Activities la realizaremos con <code>overridePendingTransition()</code> que sobreescribirá las animaciones por defecto por las animaciones que pasemos por parámetro.<!-- more --> Tendremos que llamar al método siempre que vaya a suceder una transición, como por ejemplo, al abrir o cerrar una <code>Activity</code> e indicar las animaciones de entrada y salida.</p>
 
 <h1>Animación XML</h1>
 
-<p>Para ello tendremos que crear archivos XML donde indicaremos el comportamiento de las transiciones, en este caso crearemos cuatro para recrear el efecto de la animación de transición por defecto de <code>Android 2.0</code>.</p>
+<p>Para ello tendremos que crear archivos XML donde indicaremos el comportamiento de las animaciones, en este caso crearemos cuatro para recrear el efecto de la animación de transición por defecto de <code>Android 2.0</code>.
+Tenemos a continuación diferentes atributos para definir el comportamiento de nuestra animación:
+* <code>translate</code>: desplazamiento de la vista desde un valor inicial a un valor final.</p>
+
+<pre><code>* `fromXDelta`: valor inicial sobre el eje X. 
+* `toXDelta`: valor final sobre el eje X. 
+</code></pre>
 ]]></content>
   </entry>
   
