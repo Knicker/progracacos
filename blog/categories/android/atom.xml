@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-09T02:28:10+02:00</updated>
+  <updated>2014-10-09T02:29:45+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -23,9 +23,13 @@
 <h1>Animación XML</h1>
 
 <p>Para ello tendremos que crear archivos XML donde indicaremos el comportamiento de las animaciones, en este caso crearemos cuatro para recrear el efecto de la animación de transición por defecto de <code>Android 2.0</code>.
-Tenemos a continuación diferentes atributos para definir el comportamiento de nuestra animación:
-&ndash; <code>translate</code>: desplazamiento.
-&ndash; <code>rotate</code>: rotación.</p>
+Tenemos a continuación diferentes atributos para definir el comportamiento de nuestra animación:</p>
+
+<ul>
+<li><code>translate</code>: desplazamiento.</li>
+<li><code>rotate</code>: rotación.</li>
+</ul>
+
 ]]></content>
   </entry>
   
