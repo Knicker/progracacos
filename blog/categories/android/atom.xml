@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-09T03:07:59+02:00</updated>
+  <updated>2014-10-09T03:09:29+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -72,8 +72,8 @@ overridePendingTransition(R.anim.entrar_derecha,</p>
 &lt;translate</p>
 
 <pre><code>android:toXDelta="0%" 
-    android:fromXDelta="100%" 
-    android:duration="600" /&gt;
+android:fromXDelta="100%" 
+android:duration="600" /&gt;
 </code></pre>
 
 <p>```</p>
@@ -81,9 +81,9 @@ overridePendingTransition(R.anim.entrar_derecha,</p>
 <p>``` xml salir_izquierda.xml
 &lt;translate</p>
 
-<pre><code>    android:toXDelta="-100%" 
-    android:fromXDelta="0%" 
-    android:duration="600" /&gt;
+<pre><code>android:toXDelta="-100%" 
+android:fromXDelta="0%" 
+android:duration="600" /&gt;
 </code></pre>
 
 <p>```</p>
@@ -111,9 +111,9 @@ android:duration="600" /&gt;
 <p>``` xml salir_derecha.xml
 &lt;translate</p>
 
-<pre><code>    android:toXDelta="100%" 
-    android:fromXDelta="0%" 
-    android:duration="600" /&gt;
+<pre><code>android:toXDelta="100%" 
+android:fromXDelta="0%" 
+android:duration="600" /&gt;
 </code></pre>
 
 <p>```</p>
