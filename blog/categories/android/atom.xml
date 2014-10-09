@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-09T02:51:15+02:00</updated>
+  <updated>2014-10-09T02:54:12+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -59,14 +59,11 @@
 <p>En este caso crearemos cuatro para recrear el efecto de la animación de transición por defecto de <code>Android 2.0</code> que es un desplazamiento horizontal donde simula la actividad entrante empujando a la actividad saliente.</p>
 
 <p>El evento <code>onClick()</code> de la actividad principal, sobreescribimos las transiciones pendientes al llamar a la segunda actividad:
-```java</p>
-
-<pre><code>Intent i = new Intent(ActividadPrincipal.this, SegundaActividad.class);
+<code>java
+Intent i = new Intent(ActividadPrincipal.this, SegundaActividad.class);
 startActivity(i);               
 overridePendingTransition(R.anim.entrar_derecha, R.anim.salir_izquierda);
-</code></pre>
-
-<p>```</p>
+</code></p>
 ]]></content>
   </entry>
   
