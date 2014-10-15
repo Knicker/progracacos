@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Progracacos]]></title>
-  <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Openerp | Progracacos]]></title>
+  <link href="http://Knicker.github.io/progracacos/blog/categories/openerp/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-15T19:04:30+02:00</updated>
+  <updated>2014-10-15T19:26:59+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -22,19 +22,14 @@
 
 <h1>Pasos a seguir</h1>
 
-<p>Instalamos Postgres:</p>
+<p>Creamos un usuario del sistema para ejecutar OpenERP, los usuarios del sistema no son usuarios normales logueables.
+```sudo adduser &mdash;system &mdash;home=/opt/openerp &mdash;group openerp</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install postgresql postgresql-client</span></code></pre></td></tr></table></div></figure>
+<p>Instalamos Postgres:
+<code>sudo apt-get install postgresql postgresql-client</code></p>
 
-
-<p>Comprobamos que se ha creado el usuario &lsquo;postgres&rsquo; en el sistema:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cat /etc/passwd</span></code></pre></td></tr></table></div></figure>
-
-
-
+<p>Comprobamos que se ha creado el usuario &lsquo;postgres&rsquo; en el sistema en la instalación:
+<code>cat /etc/passwd</code></p>
 ]]></content>
   </entry>
   

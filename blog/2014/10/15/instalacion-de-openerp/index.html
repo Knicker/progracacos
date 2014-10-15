@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Progracacos</title>
+  <title>Instalación De OpenERP - Progracacos</title>
   <meta name="author" content="Pablo Ruiz">
 
   
-  <meta name="description" content=" Blog Archive 2014 Instalación De OpenERP
-Oct 15 2014 posted in openerp Recent Posts Instalación De OpenERP ">
+  <meta name="description" content="OpenERP es un sistema de ERP, Enterprise Resource Planning, horizontal que son sistemas de planificación de recursos empresariales de forma modular. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Oct 15 2014 posted in openerp Recent Posts Instalación De OpenERP ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Knicker.github.io/progracacos/blog/archives">
+  <link rel="canonical" href="http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp">
   <link href="/progracacos/favicon.png" rel="icon">
   <link href="/progracacos/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/progracacos/atom.xml" rel="alternate" title="Progracacos" type="application/atom+xml">
@@ -67,36 +66,112 @@ Oct 15 2014 posted in openerp Recent Posts Instalación De OpenERP ">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Instalación De OpenERP</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T18:55:25+02:00" pubdate data-updated="true">Oct 15<sup>th</sup>, 2014</time>
+	
+
+<span class="categories">
+  
+    <a class='category' href='/progracacos/blog/categories/openerp/'>openerp</a>
+  
+</span>
+
+
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>OpenERP es un sistema de ERP, Enterprise Resource Planning, horizontal que son sistemas de planificación de recursos empresariales de forma modular. <!-- more --></p>
 
-  
-  <h2>2014</h2>
+<h1>Pasos a seguir</h1>
 
-<article>
-  
-<h1><a href="/progracacos/blog/2014/10/15/instalacion-de-openerp/">Instalación De OpenERP</a></h1>
-<time datetime="2014-10-15T18:55:25+02:00" pubdate><span class='month'>Oct</span> <span class='day'>15</span> <span class='year'>2014</span></time>
+<p>Instalamos Postgres:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/progracacos/blog/categories/openerp/'>openerp</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install postgresql postgresql-client</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>Comprobamos que se ha creado el usuario &lsquo;postgres&rsquo; en el sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cat /etc/passwd</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Pablo Ruiz</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T18:55:25+02:00" pubdate data-updated="true">Oct 15<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/progracacos/blog/categories/openerp/'>openerp</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -135,7 +210,10 @@ Oct 15 2014 posted in openerp Recent Posts Instalación De OpenERP ">
       var disqus_shortname = 'progracacos';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp/';
+        var disqus_url = 'http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
