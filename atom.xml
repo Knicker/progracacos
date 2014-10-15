@@ -4,7 +4,7 @@
   <title><![CDATA[Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-15T19:04:30+02:00</updated>
+  <updated>2014-10-15T19:43:02+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -22,16 +22,60 @@
 
 <h1>Pasos a seguir</h1>
 
+<p>Creamos un usuario del sistema para ejecutar OpenERP, los usuarios del sistema no son usuarios normales logueables.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo adduser --system --home=/opt/openerp --group openerp</span></code></pre></td></tr></table></div></figure>
+
+
 <p>Instalamos Postgres:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install postgresql postgresql-client</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Comprobamos que se ha creado el usuario &lsquo;postgres&rsquo; en el sistema:</p>
+<p>Comprobamos que se ha creado el usuario <code>postgres</code> en el sistema en la instalación:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>cat /etc/passwd</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pasamos a trabajar con el usuario <code>postgres</code> recién creado:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su postgres</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Creamos un usuario para la base de datos desde el user <code>postgres</code> y establecemos una contraseña:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt openerp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Para comprobar entramos con:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>psql</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Y listamos los usuarios creados:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT * FROM pg_user;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Y salimos de postgres psql con:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\q</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Y también salimos del usuario postgres:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>exit</span></code></pre></td></tr></table></div></figure>
 
 
 
