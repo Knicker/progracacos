@@ -4,7 +4,7 @@
   <title><![CDATA[Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-18T01:40:38+02:00</updated>
+  <updated>2014-10-18T01:41:51+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -72,9 +72,11 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>vi /mnt/grub/menu.lst </span></code></pre></td></tr></table></div></figure>
 
 
-<p>
-&ndash; Copiamos la primera entrada de las dos, se copia con &lsquo;Y&rsquo; y pegamos con &lsquo;p&rsquo;. Lo hacemos línea a línea.
-&ndash; En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla i:</p>
+<ul>
+<li>Copiamos la primera entrada de las dos, se copia con &lsquo;Y&rsquo; y pegamos con &lsquo;p&rsquo;. Lo hacemos línea a línea.</li>
+<li>En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla i:</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>DPI=160 UVESA_MODE=320x480</span></code></pre></td></tr></table></div></figure>
