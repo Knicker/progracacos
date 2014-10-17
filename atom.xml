@@ -4,7 +4,7 @@
   <title><![CDATA[Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-18T01:41:51+02:00</updated>
+  <updated>2014-10-18T01:52:55+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -55,46 +55,41 @@
 
 <ul>
 <li>Una vez creada, la iniciamos en el <strong>Debug Mode</strong>.</li>
-<li>Montamos la partición en L/E con el siguiente comando:</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mount -o remount,rw /mnt</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Ahora editamos el fichero menu.lst con vi:</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>vi /mnt/grub/menu.lst </span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+<li>Montamos la partición en L/E con el siguiente comando:
+  <code>
+  mount -o remount,rw /mnt
+ </code></li>
+<li>Ahora editamos el fichero menu.lst con vi:
+  <code>
+  vi /mnt/grub/menu.lst
+ </code></li>
 <li>Copiamos la primera entrada de las dos, se copia con &lsquo;Y&rsquo; y pegamos con &lsquo;p&rsquo;. Lo hacemos línea a línea.</li>
-<li>En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla i:</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>DPI=160 UVESA_MODE=320x480</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+<li>En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla i:
+  <code>
+  DPI=160 UVESA_MODE=320x480
+ </code></li>
 <li>Salimos del modo edición con la tecla Esc y escribimos :wq para salir guardando los cambios.</li>
-<li>Añadimos a través del terminal de Linux la configuración al VirtualBox:</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>VBoxManage setextradata "Android_4-2" "CustomVideoMode1" "320x480x16"</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
+<li>Añadimos a través del terminal de Linux la configuración al VirtualBox:
+  <code>
+  VBoxManage setextradata "Android_4-2" "CustomVideoMode1" "320x480x16"
+ </code></li>
 <li>Salimos con exit y apagamos la máquina.</li>
 <li>La iniciamos eligiendo la opción que hemos creado en el GRUB e instalamos Android siguiendo los pasos.</li>
+</ul>
+
+
+<h1>Conectarnos a la máquina virtual</h1>
+
+<ul>
+<li>Desde la máquina virtual entramos en el modo consola con <code>Alt + F1</code> y tecleamos <code>netcfg</code> para ver la IP de la máquina.</li>
+<li>Para conectarnos utilizaremos:
+  <code>
+  adb connect IP
+ </code></li>
+<li>Y para comprobar, miramos la lista de los dispositivos conectados:
+  <code>
+  adb devices
+ </code></li>
 </ul>
 
 ]]></content>
