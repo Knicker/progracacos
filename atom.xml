@@ -4,7 +4,7 @@
   <title><![CDATA[Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-18T02:13:22+02:00</updated>
+  <updated>2014-10-18T21:11:03+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -138,6 +138,137 @@
 
 <ul>
 <li>Para quitar el modo consola del emulador y volver al modo gráfico pulsamos <code>Alt + F7</code>.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Instalación De OpenERP]]></title>
+    <link href="http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp/"/>
+    <updated>2014-10-15T18:55:25+02:00</updated>
+    <id>http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp</id>
+    <content type="html"><![CDATA[<p>OpenERP es un sistema de ERP, Enterprise Resource Planning, horizontal que son sistemas de planificación de recursos empresariales de forma modular. <!-- more --></p>
+
+<h1>Preparación</h1>
+
+<ul>
+<li>Creamos un usuario del sistema para ejecutar OpenERP, los usuarios del sistema no son usuarios normales logueables.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo adduser --system --home=/opt/openerp --group openerp</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Instalamos Postgres:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install postgresql postgresql-client</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Comprobamos que se ha creado el usuario <code>postgres</code> en el sistema en la instalación:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cat /etc/passwd</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Pasamos a trabajar con el usuario <code>postgres</code> recién creado:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su postgres</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Creamos un usuario para la base de datos desde el user <code>postgres</code> y establecemos una contraseña:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt openerp</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Para comprobar entramos con:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>psql</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li>Y listamos los usuarios creados:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT * FROM pg_user;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Y salimos de <code>psql</code> con:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\q</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Y también salimos del usuario <code>postgres</code>:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>exit</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Ahora instalamos librerías Python requeridas por el servidor OpenERP:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install python-dateutil python-docutils python-feedparser python-gdata \
+</span><span class='line'>python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid \
+</span><span class='line'>python-psycopg2 python-psutil python-pybabel python-pychart python-pydot python-pyparsing \
+</span><span class='line'>python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject \
+</span><span class='line'>python-webdav python-werkzeug python-xlwt python-yaml python-zsi</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Instalación</h1>
+
+<ul>
+<li>Abrimos el instalador de paquetes e instalamos OpenERP.</li>
+<li>Ya podremos acceder desde <code>http://localhost:8069/</code></li>
+</ul>
+
+
+<h1>Configuración</h1>
+
+<ul>
+<li><strong>Contraseña maestra:</strong> admin (por defecto)</li>
+<li><strong>Nombre de la base de datos:</strong> &ndash;</li>
+<li>No cargamos datos de demostración.</li>
+<li><strong>Idioma:</strong> &ndash;</li>
+<li><strong>Contraseña:</strong> &ndash;</li>
+<li>Y una vez cumplidos los pasos, podremos instalar los módulos que queramos.</li>
 </ul>
 
 ]]></content>

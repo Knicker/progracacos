@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Openerp | Progracacos]]></title>
+  <link href="http://Knicker.github.io/progracacos/blog/categories/openerp/atom.xml" rel="self"/>
+  <link href="http://Knicker.github.io/progracacos/"/>
+  <updated>2014-10-18T21:11:03+02:00</updated>
+  <id>http://Knicker.github.io/progracacos/</id>
+  <author>
+    <name><![CDATA[Pablo Ruiz]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Instalación De OpenERP]]></title>
+    <link href="http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp/"/>
+    <updated>2014-10-15T18:55:25+02:00</updated>
+    <id>http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-de-openerp</id>
+    <content type="html"><![CDATA[<p>OpenERP es un sistema de ERP, Enterprise Resource Planning, horizontal que son sistemas de planificación de recursos empresariales de forma modular. <!-- more --></p>
+
+<h1>Preparación</h1>
+
+<ul>
+<li><p>Creamos un usuario del sistema para ejecutar OpenERP, los usuarios del sistema no son usuarios normales logueables.
+<code>
+sudo adduser --system --home=/opt/openerp --group openerp
+</code></p></li>
+<li><p>Instalamos Postgres:
+<code>
+sudo apt-get install postgresql postgresql-client
+</code></p></li>
+<li><p>Comprobamos que se ha creado el usuario <code>postgres</code> en el sistema en la instalación:
+<code>
+cat /etc/passwd
+</code></p></li>
+<li><p>Pasamos a trabajar con el usuario <code>postgres</code> recién creado:
+<code>
+sudo su postgres
+</code></p></li>
+<li><p>Creamos un usuario para la base de datos desde el user <code>postgres</code> y establecemos una contraseña:
+<code>
+createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt openerp
+</code></p></li>
+<li><p>Para comprobar entramos con:
+<code>
+psql
+</code></p></li>
+<li><p>Y listamos los usuarios creados:
+<code>
+SELECT * FROM pg_user;
+</code></p></li>
+<li><p>Y salimos de <code>psql</code> con:
+<code>
+\q
+</code></p></li>
+<li><p>Y también salimos del usuario <code>postgres</code>:
+<code>
+exit
+</code></p></li>
+<li><p>Ahora instalamos librerías Python requeridas por el servidor OpenERP:
+<code>
+sudo apt-get install python-dateutil python-docutils python-feedparser python-gdata \
+python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid \
+python-psycopg2 python-psutil python-pybabel python-pychart python-pydot python-pyparsing \
+python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject \
+python-webdav python-werkzeug python-xlwt python-yaml python-zsi
+</code></p></li>
+</ul>
+
+
+<h1>Instalación</h1>
+
+<ul>
+<li>Abrimos el instalador de paquetes e instalamos OpenERP.</li>
+<li>Ya podremos acceder desde <code>http://localhost:8069/</code></li>
+</ul>
+
+
+<h1>Configuración</h1>
+
+<ul>
+<li><strong>Contraseña maestra:</strong> admin (por defecto)</li>
+<li><strong>Nombre de la base de datos:</strong> &ndash;</li>
+<li>No cargamos datos de demostración.</li>
+<li><strong>Idioma:</strong> &ndash;</li>
+<li><strong>Contraseña:</strong> &ndash;</li>
+<li>Y una vez cumplidos los pasos, podremos instalar los módulos que queramos.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
