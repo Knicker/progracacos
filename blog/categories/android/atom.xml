@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Progracacos]]></title>
   <link href="http://Knicker.github.io/progracacos/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://Knicker.github.io/progracacos/"/>
-  <updated>2014-10-18T01:59:56+02:00</updated>
+  <updated>2014-10-18T02:03:42+02:00</updated>
   <id>http://Knicker.github.io/progracacos/</id>
   <author>
     <name><![CDATA[Pablo Ruiz]]></name>
@@ -56,9 +56,10 @@
 <ul>
 <li>Una vez creada, la iniciamos en el <strong>Debug Mode</strong>.</li>
 <li>Montamos la partición en L/E con el siguiente comando:
-  <code>
+
+<blockquote><p>  <code>
   mount -o remount,rw /mnt
- </code></li>
+ </code></p></blockquote></li>
 <li>Ahora editamos el fichero menu.lst con vi:
   <code>
   vi /mnt/grub/menu.lst
