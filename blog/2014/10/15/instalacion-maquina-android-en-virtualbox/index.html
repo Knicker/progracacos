@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Instalación Máquina Android en VirtualBox - Progracacos</title>
+  <meta name="author" content="Pablo Ruiz">
+
+  
+  <meta name="description" content="Vamos a instalar una ISO Android 4.2 en VirtualBox y configurarla para que actúe como un smartphone. Creacción máquina virtual Creamos una nueva &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox">
+  <link href="/progracacos/favicon.png" rel="icon">
+  <link href="/progracacos/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/progracacos/atom.xml" rel="alternate" title="Progracacos" type="application/atom+xml">
+  <script src="/progracacos/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/progracacos/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/progracacos/">Progracacos</a></h1>
+  
+    <h2>Tutoriales de programación propios, ¡y robados!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/progracacos/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Knicker.github.io/progracacos" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!--<li><a href="/progracacos/">Blog</a></li>-->
+  <li><a href="/progracacos/blog/archives">Archivos</a></li>
+  <!--<li><a href="/progracacos/blog/categories/android/">Android</a></li>-->
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Instalación Máquina Android en VirtualBox</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T19:51:52+02:00" pubdate data-updated="true">Oct 15<sup>th</sup>, 2014</time>
+	
+
+<span class="categories">
+  
+    <a class='category' href='/progracacos/blog/categories/android/'>android</a>, <a class='category' href='/progracacos/blog/categories/virtualbox/'>virtualbox</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Vamos a instalar una ISO Android 4.2 en VirtualBox y configurarla para que actúe como un smartphone. <!-- more --></p>
+
+<h1>Creacción máquina virtual</h1>
+
+<ul>
+<li>Creamos una <strong>nueva máquina virtual</strong>.</li>
+<li><strong>Nombre:</strong> Android_4-2</li>
+<li><strong>Sistema Operativo:</strong> Linux <strong>Versión:</strong> 2.6</li>
+<li><strong>Memoria:</strong> 512MB</li>
+<li>Creamos un nuevo disco virtual (VDI), reservado dinámicamente y con tamaño máximo de 8GB.</li>
+<li>Le damos a crear.</li>
+<li>Una vez creada la máquina virtual, le damos a <strong>Configuración</strong>.</li>
+<li>En <strong>Almacenamiento</strong> en el controlador IDE que aparecerá vacío le añadimos nuestra ISO Android.</li>
+<li>En <strong>Red</strong> seleccionamos Adaptador puente e iniciamos la máquina virtual.</li>
+</ul>
+
+
+<h1>Instalación ISO de Android</h1>
+
+<ul>
+<li>Al iniciar la máquina virtual, estamos iniciando la ISO que pusimos en la unidad CD del controlador IDE.</li>
+<li>Instalamos el Sistema Operativo Android en <code>Installation - Install Android-x86 to harddisk</code>.</li>
+<li>Le damos a <code>Create/Modify partitions</code></li>
+<li><code>New</code>, <code>Primary</code> y le ponemos el tamaño por defecto.</li>
+<li><code>Bootable</code></li>
+<li><code>Write</code></li>
+<li>Salimos.</li>
+<li>Instalamos en <em>ext3</em>, formateamos e instalamos el <code>Boot loader GRUB</code>.</li>
+<li>Le decimos que sea de escritura y lectura para que podamos añadir archivos a la memoria.</li>
+<li>Reiniciamos la máquina y sacamos la ISO de la unidad de CD.</li>
+</ul>
+
+
+<h1>Configuración máquina virtual</h1>
+
+<ul>
+<li>Una vez creada, la iniciamos en el <strong>Debug Mode</strong>.</li>
+<li>Montamos la partición en L/E con el siguiente comando:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mount -o remount,rw /mnt</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Ahora editamos el fichero menu.lst con vi:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vi /mnt/grub/menu.lst </span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Copiamos la primera entrada de las dos, se copia con <em>Y</em> y pegamos con <em>p</em>. Lo hacemos línea a línea.</li>
+<li>En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla <em>i</em>:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DPI=160 UVESA_MODE=320x480</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Salimos del modo edición con la tecla <em>Esc</em> y escribimos <em>:wq</em> para salir guardando los cambios.</li>
+<li>Añadimos a través del terminal de Linux la configuración al VirtualBox:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>VBoxManage setextradata "Android_4-2" "CustomVideoMode1" "320x480x16"</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Salimos con <em>exit</em> y apagamos la máquina.</li>
+<li>La iniciamos eligiendo la opción que hemos creado en el GRUB e instalamos Android siguiendo los pasos.</li>
+</ul>
+
+
+<h1>Configurar ADB</h1>
+
+<ul>
+<li>Para poder conectarnos a la máquina virtual desde el terminal desde cualquier directorio, añadimos la ruta del ADB al path.</li>
+<li>Para ello, creamos el fichero <strong>.bashrc</strong> en nuestro directorio <code>/home</code> si no existe.</li>
+<li>Y le añadimos las siguientes líneas:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH=${PATH}:/home/user/ruta-SDK/platform-tools
+</span><span class='line'>export PATH=${PATH}:/home/user/ruta-SDK/tools</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h1>Conectarnos a la máquina virtual</h1>
+
+<ul>
+<li>Desde la máquina virtual entramos en el modo consola con <code>Alt + F1</code> y tecleamos <em>netcfg</em> para ver la IP de la máquina.</li>
+<li>Para conectarnos utilizaremos:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb connect IP</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Y para comprobar, miramos la lista de los dispositivos conectados:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb devices</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Para quitar el modo consola del emulador y volver al modo gráfico pulsamos <code>Alt + F7</code>.</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pablo Ruiz</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T19:51:52+02:00" pubdate data-updated="true">Oct 15<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/progracacos/blog/categories/android/'>android</a>, <a class='category' href='/progracacos/blog/categories/virtualbox/'>virtualbox</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/progracacos/blog/2014/10/15/instalacion-de-openerp/" title="Previous Post: Instalación de OpenERP">&laquo; Instalación de OpenERP</a>
+      
+      
+        <a class="basic-alignment right" href="/progracacos/blog/2014/11/01/instalar-octopress/" title="Next Post: Instalar Octopress">Instalar Octopress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/progracacos/blog/2014/11/01/instalar-octopress/">Instalar Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox/">Instalación Máquina Android en VirtualBox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/progracacos/blog/2014/10/15/instalacion-de-openerp/">Instalación De OpenERP</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pablo Ruiz -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'progracacos';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox/';
+        var disqus_url = 'http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

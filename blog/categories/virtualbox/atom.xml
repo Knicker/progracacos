@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Virtualbox | Progracacos]]></title>
+  <link href="http://Knicker.github.io/progracacos/blog/categories/virtualbox/atom.xml" rel="self"/>
+  <link href="http://Knicker.github.io/progracacos/"/>
+  <updated>2014-11-01T18:32:50+01:00</updated>
+  <id>http://Knicker.github.io/progracacos/</id>
+  <author>
+    <name><![CDATA[Pablo Ruiz]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Instalación Máquina Android en VirtualBox]]></title>
+    <link href="http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox/"/>
+    <updated>2014-10-15T19:51:52+02:00</updated>
+    <id>http://Knicker.github.io/progracacos/blog/2014/10/15/instalacion-maquina-android-en-virtualbox</id>
+    <content type="html"><![CDATA[<p>Vamos a instalar una ISO Android 4.2 en VirtualBox y configurarla para que actúe como un smartphone. <!-- more --></p>
+
+<h1>Creacción máquina virtual</h1>
+
+<ul>
+<li>Creamos una <strong>nueva máquina virtual</strong>.</li>
+<li><strong>Nombre:</strong> Android_4-2</li>
+<li><strong>Sistema Operativo:</strong> Linux <strong>Versión:</strong> 2.6</li>
+<li><strong>Memoria:</strong> 512MB</li>
+<li>Creamos un nuevo disco virtual (VDI), reservado dinámicamente y con tamaño máximo de 8GB.</li>
+<li>Le damos a crear.</li>
+<li>Una vez creada la máquina virtual, le damos a <strong>Configuración</strong>.</li>
+<li>En <strong>Almacenamiento</strong> en el controlador IDE que aparecerá vacío le añadimos nuestra ISO Android.</li>
+<li>En <strong>Red</strong> seleccionamos Adaptador puente e iniciamos la máquina virtual.</li>
+</ul>
+
+
+<h1>Instalación ISO de Android</h1>
+
+<ul>
+<li>Al iniciar la máquina virtual, estamos iniciando la ISO que pusimos en la unidad CD del controlador IDE.</li>
+<li>Instalamos el Sistema Operativo Android en <code>Installation - Install Android-x86 to harddisk</code>.</li>
+<li>Le damos a <code>Create/Modify partitions</code></li>
+<li><code>New</code>, <code>Primary</code> y le ponemos el tamaño por defecto.</li>
+<li><code>Bootable</code></li>
+<li><code>Write</code></li>
+<li>Salimos.</li>
+<li>Instalamos en <em>ext3</em>, formateamos e instalamos el <code>Boot loader GRUB</code>.</li>
+<li>Le decimos que sea de escritura y lectura para que podamos añadir archivos a la memoria.</li>
+<li>Reiniciamos la máquina y sacamos la ISO de la unidad de CD.</li>
+</ul>
+
+
+<h1>Configuración máquina virtual</h1>
+
+<ul>
+<li>Una vez creada, la iniciamos en el <strong>Debug Mode</strong>.</li>
+<li>Montamos la partición en L/E con el siguiente comando:
+<code>
+mount -o remount,rw /mnt
+</code></li>
+<li>Ahora editamos el fichero menu.lst con vi:
+<code>
+vi /mnt/grub/menu.lst
+</code></li>
+<li>Copiamos la primera entrada de las dos, se copia con <em>Y</em> y pegamos con <em>p</em>. Lo hacemos línea a línea.</li>
+<li>En la línea del <code>kernel</code> añadimos la siguiente línea al final. Debemos entrar en el modo edición con la tecla <em>i</em>:
+<code>
+DPI=160 UVESA_MODE=320x480
+</code></li>
+<li>Salimos del modo edición con la tecla <em>Esc</em> y escribimos <em>:wq</em> para salir guardando los cambios.</li>
+<li>Añadimos a través del terminal de Linux la configuración al VirtualBox:
+<code>
+VBoxManage setextradata "Android_4-2" "CustomVideoMode1" "320x480x16"
+</code></li>
+<li>Salimos con <em>exit</em> y apagamos la máquina.</li>
+<li>La iniciamos eligiendo la opción que hemos creado en el GRUB e instalamos Android siguiendo los pasos.</li>
+</ul>
+
+
+<h1>Configurar ADB</h1>
+
+<ul>
+<li>Para poder conectarnos a la máquina virtual desde el terminal desde cualquier directorio, añadimos la ruta del ADB al path.</li>
+<li>Para ello, creamos el fichero <strong>.bashrc</strong> en nuestro directorio <code>/home</code> si no existe.</li>
+<li>Y le añadimos las siguientes líneas:
+<code>
+export PATH=${PATH}:/home/user/ruta-SDK/platform-tools
+export PATH=${PATH}:/home/user/ruta-SDK/tools
+</code></li>
+</ul>
+
+
+<h1>Conectarnos a la máquina virtual</h1>
+
+<ul>
+<li>Desde la máquina virtual entramos en el modo consola con <code>Alt + F1</code> y tecleamos <em>netcfg</em> para ver la IP de la máquina.</li>
+<li>Para conectarnos utilizaremos:
+<code>
+adb connect IP
+</code></li>
+<li>Y para comprobar, miramos la lista de los dispositivos conectados:
+<code>
+adb devices
+</code></li>
+<li>Para quitar el modo consola del emulador y volver al modo gráfico pulsamos <code>Alt + F7</code>.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
